@@ -1,0 +1,34 @@
+{
+  "name": "redux-actions-hub",
+  "version": "0.1.0",
+  "description": "Share Redux Actions between modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "coveralls": "*",
+    "jest-cli": "^13.2.3",
+    "redux": "^3.5.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apentle/redux-actions-hub.git"
+  },
+  "keywords": [
+    "redux-actions",
+    "redux",
+    "actions"
+  ],
+  "author": "Doan Nguyen <doannd@apentle.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apentle/redux-actions-hub/issues"
+  },
+  "homepage": "https://github.com/apentle/redux-actions-hub#readme"
+}
