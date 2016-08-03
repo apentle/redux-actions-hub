@@ -24,7 +24,7 @@ function defineActionProp(type) {
 
 // Actions Hub
 const ActionsHub = {
-  addAction(type, actionCreator) {
+  add(type, actionCreator) {
     if (typeof actionCreator !== 'function') {
       // Make a new actionCreator
       var action = actionCreator;
@@ -48,13 +48,13 @@ const ActionsHub = {
     return ActionsHub[type];
   },
 
-  removeAction(type) {
+  remove(type) {
     _actions[type] = [];
   },
 
-  replaceAction(type, actionCreator) {
-    ActionsHub.removeAction(type);
-    return ActionsHub.addAction(type, actionCreator);
+  replace(type, actionCreator) {
+    ActionsHub.remove(type);
+    return ActionsHub.add(type, actionCreator);
   },
 };
 

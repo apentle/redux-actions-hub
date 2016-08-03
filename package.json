@@ -1,6 +1,6 @@
 {
   "name": "redux-actions-hub",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Share Redux Actions between modules",
   "main": "index.js",
   "scripts": {

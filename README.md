@@ -11,13 +11,13 @@ npm i --save redux-actions-hub
 ## Usage
 **Actions**
 ```javascript
-import Actions, {addAction} from 'redux-actions-hub';
+import Actions from 'redux-actions-hub';
 
 // Auto generate action creator
-addAction('ADD_TODO');
+Actions.add('ADD_TODO');
 
 // Action creator
-addAction('removeTodo', function(id) {
+Actions.add('removeTodo', function(id) {
   return {
     type: 'REMOVE_TODO',
     id
@@ -25,9 +25,9 @@ addAction('removeTodo', function(id) {
 });
 
 // With middleware
-addAction('DELETED_TODO');
-addAction('REMOTE_FAIL');
-addAction('remoteDelete', function(id) {
+Actions.add('DELETED_TODO');
+Actions.add('REMOTE_FAIL');
+Actions.add('remoteDelete', function(id) {
   return dispatch => {
     fetch('https://localhost/todos/delete/' + id)
       .then(response => dispatch(Actions.DELETED_TODO(id)))
@@ -47,6 +47,6 @@ dispatch(remoteDelete(1));
 ```
 
 ## API
-1. **addAction(type, actionCreator)** Add new action creator to hub
-2. **removeAction(type)** Remove action creator from hub
-3. **replaceAction(type, actionCreator)** Replace action creator from hub with new action creator
+1. **add(type, actionCreator)** Add new action creator to hub
+2. **remove(type)** Remove action creator from hub
+3. **replace(type, actionCreator)** Replace action creator from hub with new action creator
