@@ -40,4 +40,9 @@ describe('ActionsHub', () => {
     expect(Actions.ADD('new')).toBe('new');
     expect(Actions.ADD({id: 1})).toEqual({id: 1});
   });
+
+  it('reset(): reset actions data', () => {
+    Actions.reset();
+    expect(() => Actions.ADD()).toThrow();
+  });
 });

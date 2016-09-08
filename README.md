@@ -50,3 +50,4 @@ dispatch(remoteDelete(1));
 1. **add(type, actionCreator)** Add new action creator to hub
 2. **remove(type)** Remove action creator from hub
 3. **replace(type, actionCreator)** Replace action creator from hub with new action creator
+4. **reset()** Reset actions data

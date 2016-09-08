@@ -2,7 +2,12 @@
 
 var _actions = {};
 
-// Private method : define action property
+/**
+ * defineActionProp - define action property
+ *
+ * @param  {string} type action's type
+ * @returns {undefined}
+ */
 function defineActionProp(type) {
   ActionsHub[type] = function() {
     var creators = _actions[type];
@@ -24,6 +29,13 @@ function defineActionProp(type) {
 
 // Actions Hub
 const ActionsHub = {
+  /**
+   * add - add an action
+   *
+   * @param  {string} type          action's type
+   * @param  {mixed} actionCreator  action creator function
+   * @returns {function}            registered action creator function
+   */
   add(type, actionCreator) {
     if (typeof actionCreator !== 'function') {
       // Make a new actionCreator
@@ -48,13 +60,33 @@ const ActionsHub = {
     return ActionsHub[type];
   },
 
+  /**
+   * remove - remove action type
+   *
+   * @param  {string} type action's type
+   * @returns {undefined}
+   */
   remove(type) {
     _actions[type] = [];
   },
 
+  /**
+   * replace - replace old action creator with new one
+   *
+   * @param  {string} type          action's type
+   * @param  {mixed} actionCreator  action creator function
+   * @returns {function}            registered action creator function
+   */
   replace(type, actionCreator) {
     ActionsHub.remove(type);
     return ActionsHub.add(type, actionCreator);
+  },
+
+  /**
+   * reset - reset actions data
+   */
+  reset() {
+    _actions = {};
   },
 };
 
